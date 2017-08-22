@@ -1,0 +1,22 @@
+{
+    "name": "kushalbhaktajoshi/apiclient",
+    "description": "Client for Rest and Soap API",
+    "keywords": ["client", "rest", "soap", "api", "web service", "curl", "HTTP client"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kushal Bhakta Joshi",
+            "email": "kushalbhaktajoshi@gmail.com",
+            "homepage": "http://kushaljoshi.com.np"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "KushalBhaktaJoshi\\API\\": "src/"
+        }
+    }
+}
