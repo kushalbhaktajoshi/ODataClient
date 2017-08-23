@@ -13,20 +13,36 @@ class Client extends GuzzleHttpClient
         parent::__construct();
     }
 
-    public function getMethod($method){
+    private function getMethod(){
+        return $this->method;
+    }
+
+    private function getUri(){
+        return $this->uri;
+    }
+
+    private function getOptions(){
+        return $this->options;
+    }
+
+    public function setMethod($method){
         $this->method = $method;
     }
 
-    public function getUri($uri){
+    public function setUri($uri){
         $this->uri = $uri;
     }
 
-    public function getOptions($options){
+    public function setOptions($options){
         $this->options = $options;
     }
 
     public function response() {
-        $res = $this->request($this->method, $this->uri, $this->options);
+        $method = $this->getMethod();
+        $uri = $this->getUri();
+        $options = $this->getOptions();
+
+        $res = $this->request($method, $uri, $options);
 
         $body = $res->getBody();
         $content = json_decode($body->getContents());
